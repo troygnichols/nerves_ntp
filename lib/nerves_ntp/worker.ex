@@ -66,7 +66,7 @@ defmodule Nerves.Ntp.Worker do
   end
 
   def add_servers(cmd), do: add_servers(cmd, @servers)
-  def add_servers(cmd, [h | t]), do: add_servers cmd <> " -p #{h}", t
+  def add_servers(cmd, [h | t]), do: add_servers cmd <> " #{h}", t
   def add_servers(cmd, []), do: cmd
 
   def parse_ntp_output("ntpd: bad address " <> _address) do
